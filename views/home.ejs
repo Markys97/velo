@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Document</title>
+</head>
+<body class="home">
+    <header class="header">
+        <div class="header__container">
+            <a href="/">   мои велосипеды</a>
+        </div>
+        
+    </header>
+    <section class="brand">
+        <div class="brand__container">
+            <div class="brand__row">
+                <%dataMarque.forEach(mark=>{%>
+                    <div class="brand__item">
+                        <a href="/velo/<%= mark.id %> " class="brand__item-link">
+                            <div class="brand__img">
+                                <img src="/img/brand/<%= mark.imgBrand%>" alt="brand picture">
+                            </div>
+                            <p class="brand__name"> <%= mark.brandName %> </p>
+                        </a>
+                    </div>
+                <%})%>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            Max Ryabtsev
+        </div>
+    </footer>
+</body>
+</html>

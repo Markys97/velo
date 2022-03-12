@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Document</title>
+</head>
+<body class="velo-order">
+    <header class="header">
+        <div class="header__container">
+            <a href="/">   мои велосипеды</a>
+        </div>
+        
+    </header>
+
+    <sectiion class="choice-velo">
+        <div class="choice-velo__container">
+            <div class="choice-velo__row">
+                <% dataVelo.forEach(velo=>{%>
+
+                    <div class="choice-velo__item">
+                        <div class="choice-velo__img">
+                            <img src="/img/velo/<%= velo.imgVelo%>" alt="velo">
+                        </div>
+                        <p class="choice-velo__data">
+                            <span class="choice-velo__data-name">
+                                <%= velo.name_ %>
+                            </span>
+                            <span class="choice-velo__data-price">
+                                <%= velo.price %> <b>$</b>
+                            </span>
+                        </p>
+                        <p class="choice-velo__desc">
+                            <%= velo.description%>
+                        </p>
+                        
+                        <form action="" class="choice-velo__form">
+                            <select name="place" id="place">
+                                
+                                <option value="места 1">место 1</option>
+                                <option value="места 2">место 2</option>
+                                <option value="места 3">место 3</option>
+                                <option value="места 4">место 4</option>
+                                <option value="места 5">место 5</option>
+                                <option value="места 6">место 6</option>
+                            </select>
+                        </form>
+                        <button class="choice-velo__btn" data-idvelo="<%= velo.idVelo %>"> принять </button>
+                        
+                    </div>
+
+                <%})%>
+            </div>
+           
+        </div>
+    </sectiion>
+    
+    <footer class="footer">
+        <div class="footer__container">
+            Max Ryabtsev
+        </div>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>
